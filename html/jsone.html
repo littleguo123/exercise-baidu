@@ -13,6 +13,7 @@
 <script type="text/javascript">
 
     (function() {
+
         document.getElementById("button").addEventListener("click", function(){
             var x=document.getElementById("aqi-input").value;
             document.getElementById("aqi-display").innerHTML=x;
@@ -20,6 +21,13 @@
 
 
 
+
+
+        document.getElementById("button").addEventListener("click",function () {
+            var x=document.getElementById("aqi-input").value;
+            document.getElementById("aqi-display").innerHTML=x;
+
+        },false)
 
         /*
          在注释下方写下代码
