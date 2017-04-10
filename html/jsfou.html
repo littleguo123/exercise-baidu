@@ -50,6 +50,7 @@
         x.append(p);
     }
     function leftout(){
+        var t=document.getElementById("cc");
         if(t.children.length!=0){
         var ttt=t.childNodes[0];
         ttt.remove();
@@ -67,9 +68,14 @@
         }
         else
             alert("已经全部移除");
-
-
     }
+    var t=document.getElementById("cc");
+   t.addEventListener("click",function(e){
+        if(event.target.nodeName=="P"){
+//                    console.log(event.target);
+           t.removeChild(event.target);
+        }
+    })
 </script>
 
 </html>
