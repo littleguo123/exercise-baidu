@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+
+        }
+        p{
+            border: 1px solid red;
+            width: auto;
+            height: auto;
+            text-align: center;
+            background: red;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div style="width:400px;margin: 0 auto;">
+        <input type="text" style="width: 150px;height: auto"/>
+        <label><button onclick="leftin()">左侧入</button></label>
+        <label> <button onclick="rightin()">右侧入</button></label>
+            <label><button onclick="leftout()">左侧出</button></label>
+                <label><button onclick="rightout()">右侧出</button></label>
+    </div>
+<div id="cc" style="display: flex;justify-content: center" >
+
+</div>
+</body>
+<script>
+    function leftin() {
+        var t=document.getElementsByTagName("input")[0];
+        var q=t.value;
+        var x=document.getElementById("cc");
+    var p = document.createElement("p");
+    p.innerHTML=q;
+    x.prepend(p);
+    }
+    function rightin() {
+        var t=document.getElementsByTagName("input")[0];
+        var q=t.value;
+        var x=document.getElementById("cc");
+        var p = document.createElement("p");
+        p.innerHTML=q;
+        x.append(p);
+    }
+    function leftout(){
+        if(t.children.length!=0){
+        var ttt=t.childNodes[0];
+        ttt.remove();
+        }
+        else
+            alert("已经全部移除");
+
+    }
+    function rightout(){
+        var t=document.getElementById("cc");
+        if(t.children.length!=0) {
+            var len = t.children.length - 1;
+            var ttt = t.childNodes[len];
+            ttt.remove();
+        }
+        else
+            alert("已经全部移除");
+
+
+    }
+</script>
+
+</html>
