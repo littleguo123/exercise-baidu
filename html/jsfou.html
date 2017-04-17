@@ -33,7 +33,25 @@
 </div>
 </body>
 <script>
+
+    var text = document.getElementsByTagName("input")[0];
+    text.onkeyup = function(){
+        this.value=this.value.replace(/\D/g,'');
+        if(text.value>100){
+            text.value = '';
+            alert("请输入10到100的数");
+        }
+//        else if(text.value<10){
+//            text.value ='';
+//            alert("请输入10到100的数");
+//        }
+    }
     function leftin() {
+        var text = document.getElementsByTagName("input")[0];
+        if(text.value==''){
+            alert("请输入一个数字");
+            return false;
+        }
         var t=document.getElementsByTagName("input")[0];
         var q=t.value;
         var x=document.getElementById("cc");
@@ -42,6 +60,11 @@
     x.prepend(p);
     }
     function rightin() {
+        var text = document.getElementsByTagName("input")[0];
+        if(text.value==''){
+            alert("请输入一个数字");
+            return false;
+        }
         var t=document.getElementsByTagName("input")[0];
         var q=t.value;
         var x=document.getElementById("cc");
@@ -50,6 +73,11 @@
         x.append(p);
     }
     function leftout(){
+        var text = document.getElementsByTagName("input")[0];
+        if(text.value==''){
+            alert("请输入一个数字");
+            return false;
+        }
         var t=document.getElementById("cc");
         if(t.children.length!=0){
         var ttt=t.childNodes[0];
@@ -60,6 +88,11 @@
 
     }
     function rightout(){
+        var text = document.getElementsByTagName("input")[0];
+        if(text.value==''){
+            alert("请输入一个数字");
+            return false;
+        }
         var t=document.getElementById("cc");
         if(t.children.length!=0) {
             var len = t.children.length - 1;

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+
+        }
+        p{
+            border: 1px solid red;
+            width: auto;
+
+            text-align: center;
+            background: red;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+    </style>
+</head>
+<body>
+<div style="width:600px;margin: 0 auto;">
+    <input type="text" style="width: 150px;height: auto"onkeyup="this.value=this.value.replace(/\D/g,'')"
+           onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+    <label><button onclick="leftin()">左侧入</button></label>
+    <label> <button onclick="rightin()">右侧入</button></label>
+    <label><button onclick="leftout()">左侧出</button></label>
+    <label><button onclick="rightout()">右侧出</button></label>
+    <label><button onclick="ssort()">从大到小排序</button></label>
+    <label><button onclick="ssort2()">从小到大排序</button></label>
+</div>
+<div id="cc" style="display: flex;justify-content: center;position: relative;top:200px;flex-wrap: wrap-reverse;" ></div>
+<div id="dd" style="display: flex;justify-content: center;position: relative;top:300px;flex-wrap: wrap-reverse;"></div>
+<div id="ee" style="display: flex;justify-content: center;position: relative;top:400px;flex-wrap: wrap-reverse;"></div>
+
+</body>
+<script>
+
+
+    function leftin() {
+        var text = document.getElementsByTagName("input")[0];
+        if(text.value==''){
+            alert("请输入一个数字");
+            return false;
+        }
+       else if(text.value>100) {
+
+                text.value = '';
+                alert("请输入10到100的数");
+            return false;
+
+        }
+            else if(text.value<10){
+                text.value ='';
+                alert("请输入10到100的数");
+            return false;
+            }
+
+        var t=document.getElementsByTagName("input")[0];
+        var q=t.value;
+        var x=document.getElementById("cc");
+        var p = document.createElement("p");
+         var xx=x.getElementsByTagName("p");
+         if(xx.length<60) {
+             p.innerHTML = q;
+             x.prepend(p);
+             p.style.height = q + 'px';
+         }
+         else alert("限制为60个");
+
+    }
+    function rightin() {
+        var text = document.getElementsByTagName("input")[0];
+        if(text.value==''){
+            alert("请输入一个数字");
+            return false;
+        }
+        else if(text.value>100) {
+
+            text.value = '';
+            alert("请输入10到100的数");
+            return false;
+
+        }
+        else if(text.value<10){
+            text.value ='';
+            alert("请输入10到100的数");
+            return false;
+        }
+        var t=document.getElementsByTagName("input")[0];
+        var q=t.value;
+        var x=document.getElementById("cc");
+        var p = document.createElement("p");
+        var xx=x.getElementsByTagName("p");
+        if(xx.length<60) {
+            p.innerHTML = q;
+            x.append(p);
+            p.style.height = q + 'px';
+        }
+        else alert("限制为60个");
+    }
+    function leftout(){
+        var text = document.getElementsByTagName("input")[0];
+        if(text.value==''){
+            alert("请输入一个数字");
+            return false;
+        }
+        else if(text.value>100) {
+
+            text.value = '';
+            alert("请输入10到100的数");
+            return false;
+
+        }
+        else if(text.value<10){
+            text.value ='';
+            alert("请输入10到100的数");
+            return false;
+        }
+        var t=document.getElementById("cc");
+        if(t.children.length!=0){
+            var ttt=t.childNodes[0];
+            ttt.remove();
+        }
+        else
+            alert("已经全部移除");
+
+    }
+    function rightout(){
+        var text = document.getElementsByTagName("input")[0];
+        if(text.value==''){
+            alert("请输入一个数字");
+            return false;
+        }
+        else if(text.value>100) {
+
+            text.value = '';
+            alert("请输入10到100的数");
+            return false;
+
+        }
+        else if(text.value<10){
+            text.value ='';
+            alert("请输入10到100的数");
+            return false;
+        }
+        var t=document.getElementById("cc");
+        if(t.children.length!=0) {
+            var len = t.children.length - 1;
+            var ttt = t.childNodes[len];
+            ttt.remove();
+        }
+        else
+            alert("已经全部移除");
+    }
+    var t=document.getElementById("cc");
+    t.addEventListener("click",function(e){
+        if(event.target.nodeName=="P"){
+//                    console.log(event.target);
+            t.removeChild(event.target);
+        }
+    })
+    var t=document.getElementById("cc");
+    t.addEventListener("click",function(e){
+        if(event.target.nodeName=="P"){
+//                    console.log(event.target);
+            t.removeChild(event.target);
+        }
+    })
+    function sortData(data) {
+        return data.sort(function(arr1, arr2) {
+            return arr2 - arr1;
+        })
+    }
+    function sortData2(data) {
+        return data.sort(function(arr1, arr2) {
+            return arr1 - arr2;
+        })
+    }
+    function ssort() {
+        var data=[];
+        var t=document.getElementById("cc");
+        var lis = document.getElementById("cc").getElementsByTagName("p");
+        for(var i=0;i<lis.length;i++) {
+                var num =  lis[i].innerHTML;
+                data.push([num]);
+        }
+        sortData(data);
+        var list="";
+        for(var i=0;i<data.length;i++){
+            var x=document.getElementById("dd");
+            var pp = document.createElement("p");
+            pp.innerHTML=data[i];
+            x.append(pp);
+            pp.style.height=data[i]+'px';
+
+        }
+    }
+    function ssort2() {
+        var data=[];
+        var t=document.getElementById("cc");
+        var lis = document.getElementById("cc").getElementsByTagName("p");
+        for(var i=0;i<lis.length;i++) {
+            var num =  lis[i].innerHTML;
+            data.push([num]);
+        }
+        sortData2(data);
+        var list="";
+        for(var i=0;i<data.length;i++){
+            var x=document.getElementById("ee");
+            var pp = document.createElement("p");
+            pp.innerHTML=data[i];
+            x.append(pp);
+            pp.style.height=data[i]+'px';
+
+        }
+    }
+</script>
+
+</html>
