@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>js和树（一）</title>
+</head>
+<body>
+    <div style="width: 660px;height: 150px;border: 1px solid black;padding: 10px;display: flex" class="box box-one">
+        <div style="width: 280px;height: 120px;border: 1px solid black;margin-right: 10px;padding: 10px;display: flex"class="box">
+            <div style="width: 160px;height: 80px;border: 1px solid black;margin-right: 10px;padding: 10px;display: flex"class="box">
+                <div style="width: 20px;height: 20px;border: 1px solid black;margin-right: 10px;padding: 10px;display: flex"class="box"></div>
+                <div style="width: 20px;height: 20px;border: 1px solid black;;padding: 10px;display: flex"class="box"></div>
+            </div>
+            <div style="width: 160px;height: 80px;border: 1px solid black;padding: 10px;display: flex"class="box">
+                <div style="width: 20px;height: 20px;border: 1px solid black;margin-right: 10px;padding: 10px;display: flex"class="box"></div>
+                <div style="width: 20px;height: 20px;border: 1px solid black;;padding: 10px;display: flex"class="box"></div>
+            </div>
+        </div>
+        <div style="width: 280px;height: 120px;border: 1px solid black;padding: 10px;display: flex"class="box">
+            <div style="width: 160px;height: 80px;border: 1px solid black;margin-right: 10px;padding: 10px;display: flex"class="box">
+                <div style="width: 20px;height: 20px;border: 1px solid black;margin-right: 10px;padding: 10px;display: flex"class="box"></div>
+                <div style="width: 20px;height: 20px;border: 1px solid black;;padding: 10px;display: flex"class="box"></div>
+
+            </div>
+            <div style="width: 160px;height: 80px;border: 1px solid black;padding: 10px;display: flex"class="box">
+                <div style="width: 20px;height: 20px;border: 1px solid black;margin-right: 10px;padding: 10px;display: flex"class="box"></div>
+                <div style="width: 20px;height: 20px;border: 1px solid black;;padding: 10px;display: flex"class="box"></div>
+            </div>
+        </div>
+    </div>
+<button class="btn-perOrder">前序</button>
+    <button class="btn-inOrder">中序</button>
+    <button class="btn-lastOrder">后序</button>
+</body>
+<script>
+window.onload=function () {
+
+
+    function preOrder(node,arr){
+        if(node!==null){
+            arr.push(node);
+            preOrder(node.firstElementChild,arr);
+            preOrder(node.lastElementChild,arr);
+        }
+    }
+    function inOrder(node,arr){
+        if(node!==null){
+
+            preOrder(node.firstElementChild,arr);
+            arr.push(node);
+            preOrder(node.lastElementChild,arr);
+        }
+    }
+    function lastOrder(node,arr){
+        if(node!==null){
+
+            preOrder(node.firstElementChild,arr);
+            preOrder(node.lastElementChild,arr);
+            arr.push(node);
+        }
+    }
+    function describe(a) {
+        var x=document.querySelectorAll(".box");
+        for(i=0;i<x.length;i++){
+            x[i].style.backgroundColor ="#fff";
+        }
+            a.style.backgroundColor ="red";
+    }
+    function setaction(arr) {
+        var i=0;
+        let timer = setInterval(function () {
+            if(i < arr.length){
+                describe(arr[i]);
+                i=i+1;
+
+            }
+            else {
+                arr[arr.length -1].style.backgroundColor = "#fff";
+                clearInterval(timer);
+                return
+            }
+
+        },500);
+    }
+    function btnOK(root,fn) {
+        let arr = [];
+        fn(root,arr);
+        setaction(arr);
+
+    }
+
+    function init() {
+        let root = document.querySelector(".box-one"),
+        tt1=document.querySelector(".btn-perOrder"),
+        tt2=document.querySelector(".btn-inOrder"),
+        tt3=document.querySelector(".btn-lastOrder");
+        tt1.onclick=function(){
+            btnOK(root, preOrder);
+        };
+        tt2.onclick=function(){
+            btnOK(root, inOrder);
+        };
+        tt3.onclick=function(){
+            btnOK(root, lastOrder);
+        };
+    }
+    init();
+
+}
+
+</script>
+</html>
