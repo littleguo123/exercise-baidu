@@ -1,1 +1,40 @@
-<mxfile host="app.diagrams.net" modified="2022-07-11T13:18:07.747Z" agent="5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36" version="18.1.3" etag="2aQwwsnBluQrUs58HpjX" type="github"><diagram id="bhnlyG6VFwx0y475LgSR">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-07-12T02:23:06.590Z" agent="5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36" etag="HA8WDOCV84WhmZoawWAl" version="18.1.3" type="github">
+  <diagram id="bhnlyG6VFwx0y475LgSR" name="Page-1">
+    <mxGraphModel dx="1182" dy="804" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="M-wi1iu69MOPC6zRH0lT-1" value="" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffe6cc;strokeColor=#000000;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="200" width="270" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="M-wi1iu69MOPC6zRH0lT-3" value="轨迹case服务" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;dashed=1;sketch=0;fontFamily=Helvetica;fontSize=12;fontColor=default;strokeColor=#000000;fillColor=#fad7ac;" vertex="1" parent="1">
+          <mxGeometry x="170" y="230" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="M-wi1iu69MOPC6zRH0lT-4" value="地图job服务&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;dashed=1;sketch=0;fontFamily=Helvetica;fontSize=12;fontColor=default;strokeColor=#000000;fillColor=#fad7ac;" vertex="1" parent="1">
+          <mxGeometry x="50" y="300" width="110" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="M-wi1iu69MOPC6zRH0lT-5" value="负载均衡服务" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;dashed=1;sketch=0;fontFamily=Helvetica;fontSize=12;fontColor=default;strokeColor=#000000;fillColor=#fad7ac;" vertex="1" parent="1">
+          <mxGeometry x="170" y="305" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="M-wi1iu69MOPC6zRH0lT-6" value="轨迹domain服务&lt;br&gt;&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;dashed=1;sketch=0;fontFamily=Helvetica;fontSize=12;fontColor=default;strokeColor=#000000;fillColor=#fad7ac;" vertex="1" parent="1">
+          <mxGeometry x="170" y="380" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="M-wi1iu69MOPC6zRH0lT-7" value="" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;dashed=1;sketch=0;fontFamily=Helvetica;fontSize=12;strokeColor=#000000;fillColor=#f8cecc;" vertex="1" parent="1">
+          <mxGeometry x="40" y="510" width="270" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="M-wi1iu69MOPC6zRH0lT-8" value="轨迹缓存" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;dashed=1;sketch=0;fontFamily=Helvetica;fontSize=12;strokeColor=#BD7000;fillColor=#f0a30a;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="187.5" y="430" width="95" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="M-wi1iu69MOPC6zRH0lT-9" value="高速轨迹构建job" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;dashed=1;sketch=0;fontFamily=Helvetica;fontSize=12;strokeColor=#BD7000;fillColor=#f0a30a;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="56.25" y="350" width="97.5" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="M-wi1iu69MOPC6zRH0lT-11" value="" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=7.569999999999936;rounded=0;shadow=0;glass=0;sketch=0;fontFamily=Helvetica;fontSize=12;strokeColor=#000000;fillColor=#FF9999;rotation=90;" vertex="1" parent="1">
+          <mxGeometry x="80" y="506.40999999999997" width="46.25" height="67.19" as="geometry" />
+        </mxCell>
+        <mxCell id="M-wi1iu69MOPC6zRH0lT-12" value="" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=7.569999999999936;rounded=0;shadow=0;glass=0;sketch=0;fontFamily=Helvetica;fontSize=12;strokeColor=#000000;fillColor=#FF9999;rotation=90;" vertex="1" parent="1">
+          <mxGeometry x="211.87999999999994" y="506.40999999999997" width="46.25" height="67.19" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
